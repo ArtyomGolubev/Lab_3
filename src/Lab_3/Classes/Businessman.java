@@ -4,10 +4,11 @@ import Lab_3.AbstractClasses.AbstractCharacter;
 import Lab_3.AbstractClasses.AbstractItem;
 import Lab_3.Enums.Status;
 
-public class Businessman2 extends AbstractCharacter {
+public class Businessman extends AbstractCharacter {
     private int money = 100;
-    public Businessman2() {
-        super("Мига");
+
+    public Businessman(String name) {
+        super(name);
     }
 
     public void buy(AbstractItem item) {
@@ -17,6 +18,14 @@ public class Businessman2 extends AbstractCharacter {
         } else {
             System.out.println("У " + this.getName() + " недостаточно денег для покупки " + item.getItemName());
         }
+    }
+
+    public void agreeFor(Meeting m, AbstractCharacter p){
+        if (this.getStatus() == Status.Interested) {
+            System.out.println(getName() + " согласился на " + m.getTitle() + " с " + p.getName() + " так как он заинтересован");
+            m.addParticipant(this);
+        }
+        else System.out.println(getName() + " не согласился на " + m.getTitle() + " с " + p.getName());
     }
 
     public void eat() {

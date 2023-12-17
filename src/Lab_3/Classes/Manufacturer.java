@@ -33,6 +33,11 @@ public class Manufacturer extends AbstractCharacter implements CanMoveByCar {
         person2.setStatus(Status.Interested);
     }
 
+    public void arrangeMeeting(Meeting m, AbstractPlace place) {
+        m.setLocation(place);
+        System.out.println(getName() + " организовал " + m.getTitle() + " в " + place.getPlaceName());
+    }
+
     public void moveByCar(AbstractPlace place) {
         super.setWhereabouts(place);
         System.out.println(super.getName() + " приехал в " + place.getPlaceName() + " на машине");

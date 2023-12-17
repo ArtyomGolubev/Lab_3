@@ -4,7 +4,7 @@ import Lab_3.Enums.Status;
 import Lab_3.Interfaces.CanMove;
 
 public abstract class AbstractCharacter implements CanMove {
-    private String name=null;
+    private String name;
     private Status status=null;
     private AbstractPlace whereabouts=null;
 
@@ -37,7 +37,7 @@ public abstract class AbstractCharacter implements CanMove {
             this.whereabouts.goAway(this);
         }
         this.whereabouts = place;
-        place.characters.add(this);
+        place.addCharacter(this);
     }
 
     public void move(AbstractPlace place) {

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public abstract class AbstractPlace {
     private String placename;
-    public ArrayList<AbstractCharacter> characters = new ArrayList<>();
+    private ArrayList<AbstractCharacter> characters = new ArrayList<>();
 
     public AbstractPlace(String placename) {
         this.placename = placename;
@@ -12,6 +12,10 @@ public abstract class AbstractPlace {
 
     public void goAway(AbstractCharacter p){
         this.characters.remove(p);
+    }
+
+    public void addCharacter(AbstractCharacter p){
+        this.characters.add(p);
     }
 
     public String getPlaceName() {
