@@ -1,5 +1,7 @@
 package Lab_3.AbstractClasses;
 
+import java.util.Objects;
+
 public abstract class AbstractItem {
     private String itemname;
     private int itemprice;
@@ -24,7 +26,7 @@ public abstract class AbstractItem {
 
     @Override
     public int hashCode() {
-        return super.hashCode() + this.getItemName().hashCode();
+        return Objects.hash(itemname, itemprice);
     }
 
     @Override

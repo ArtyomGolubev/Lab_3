@@ -1,6 +1,7 @@
 package Lab_3.AbstractClasses;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public abstract class AbstractPlace {
     private String placename;
@@ -29,7 +30,7 @@ public abstract class AbstractPlace {
 
     @Override
     public int hashCode() {
-        return super.hashCode() + this.getPlaceName().hashCode();
+        return Objects.hash(placename, characters);
     }
 
     @Override

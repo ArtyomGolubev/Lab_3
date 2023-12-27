@@ -2,6 +2,7 @@ package Lab_3.AbstractClasses;
 
 import Lab_3.Enums.Status;
 import Lab_3.Interfaces.CanMove;
+import java.util.Objects;
 
 public abstract class AbstractCharacter implements CanMove {
     private String name;
@@ -47,12 +48,12 @@ public abstract class AbstractCharacter implements CanMove {
 
     @Override
     public String toString() {
-        return "Персонаж " + name;
+        return "Персонаж " + this.name;
     }
 
     @Override
     public int hashCode() {
-        return super.hashCode() + this.getName().hashCode();
+        return Objects.hash(name, status, whereabouts);
     }
 
     @Override
