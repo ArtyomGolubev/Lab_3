@@ -57,9 +57,10 @@ public abstract class AbstractCharacter implements CanMove {
     }
 
     @Override
-    public boolean equals(Object x) {
-        if (this == x) return true;
-        if (x == null || getClass() != x.getClass()) return false;
-        return Objects.equals(this.name, name) && Objects.equals(this.status, status) && Objects.equals(this.whereabouts, whereabouts);
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        AbstractCharacter c = (AbstractCharacter) obj;
+        return Objects.equals(name, c.name) && Objects.equals(status, c.status) && Objects.equals(whereabouts, c.whereabouts);
     }
 }
