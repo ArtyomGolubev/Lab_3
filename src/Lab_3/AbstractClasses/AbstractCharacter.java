@@ -6,8 +6,8 @@ import java.util.Objects;
 
 public abstract class AbstractCharacter implements CanMove {
     private String name;
-    private Status status=null;
-    private AbstractPlace whereabouts=null;
+    private Status status;
+    private AbstractPlace whereabouts;
 
     public AbstractCharacter(String name) {
         this.name = name;
@@ -57,7 +57,9 @@ public abstract class AbstractCharacter implements CanMove {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return obj.hashCode() == this.hashCode();
+    public boolean equals(Object x) {
+        if (this == x) return true;
+        if (x == null || getClass() != x.getClass()) return false;
+        return Objects.equals(this.name, name) && Objects.equals(this.status, status) && Objects.equals(this.whereabouts, whereabouts);
     }
 }
